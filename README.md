@@ -1,3 +1,3 @@
 # react-course-forms
 
-This repo contains the coursework 'React Forms' task.
+This repo contains the coursework task for RS school.
