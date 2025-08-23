@@ -1,11 +1,11 @@
 import * as Yup from 'yup';
+import type { UserFormData, Gender } from './types';
 
 export const nameFirstUpper = /^[A-ZА-Я][A-Za-zА-Яа-я' -]*$/;
-
 export const passwordStrengthRe =
   /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^A-Za-z0-9]).+$/;
 
-export const formSchema = Yup.object({
+export const formSchema: Yup.ObjectSchema<UserFormData> = Yup.object({
   name: Yup.string()
     .matches(nameFirstUpper, 'Первая буква должна быть заглавной')
     .required('Введите имя'),
@@ -25,11 +25,12 @@ export const formSchema = Yup.object({
   confirmPassword: Yup.string()
     .oneOf([Yup.ref('password')], 'Пароли не совпадают')
     .required('Повторите пароль'),
-  gender: Yup.mixed<'male' | 'female' | 'other'>()
+  gender: Yup.mixed<Gender>()
     .oneOf(['male', 'female', 'other'], 'Выберите пол')
     .required('Выберите пол'),
-  acceptTC: Yup.boolean().oneOf([true], 'Необходимо согласие с условиями'),
+  acceptTC: Yup.boolean()
+    .oneOf([true], 'Необходимо согласие с условиями')
+    .defined(),
   country: Yup.string().required('Выберите страну'),
-
-  pictureBase64: Yup.string().nullable(),
-});
+  pictureBase64: Yup.string().nullable().defined(),
+}).required();
