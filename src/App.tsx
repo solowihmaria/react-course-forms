@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Modal } from './components/Modal';
+import { UncontrolledForm } from './components/Forms/UncontrolledForm';
 
 type Mode = 'uncontrolled' | 'rhf' | null;
 
@@ -22,8 +23,13 @@ function App() {
         onClose={() => setMode(null)}
         title={mode === 'rhf' ? 'React Hook Form' : 'Uncontrolled Form'}
       >
-        {mode === 'rhf' && <p>здесь позже будет форма на RHF</p>}
-        {mode === 'uncontrolled' && <p>здесь позже будет Uncontrolled форма</p>}
+        {mode === 'rhf' && (
+          <p>RHF placeholder — здесь позже будет форма на RHF.</p>
+        )}
+
+        {mode === 'uncontrolled' && (
+          <UncontrolledForm onSuccess={() => setMode(null)} />
+        )}
       </Modal>
     </>
   );

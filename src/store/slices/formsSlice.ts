@@ -1,6 +1,6 @@
 import { createSlice, nanoid } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import type { UserFormData } from '../../forms/types';
+import type { UserFormData } from '../../components/Forms/types';
 
 type Source = 'uncontrolled' | 'rhf';
 

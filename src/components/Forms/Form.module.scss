@@ -1,0 +1,86 @@
+.form {
+  display: grid;
+  gap: 1px;
+}
+
+.row {
+  display: grid;
+  gap: 6px;
+}
+
+.label {
+  font-weight: 600;
+}
+
+.input,
+.select {
+  padding: 8px 10px;
+  border: 1px solid var(--disabled-border);
+  border-radius: 8px;
+  background: var(--color-bg);
+  color: var(--text-main);
+}
+
+.checkboxRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.error {
+  min-height: 18px;
+  font-size: 12px;
+  color: var(--error);
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--color-primary-border);
+  background: var(--color-primary);
+  cursor: pointer;
+}
+
+.btnSecondary {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--disabled-border);
+  background: var(--disabled-bg);
+  color: var(--disabled-text);
+  cursor: pointer;
+}
+
+.strength {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bars {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 4px;
+}
+
+.bar {
+  width: 28px;
+  height: 6px;
+  border-radius: 4px;
+  background: var(--disabled-border);
+}
+
+.barActive {
+  background: var(--color-primary);
+}
+
+.help {
+  font-size: 12px;
+  color: var(--text-muted);
+}
