@@ -207,26 +207,22 @@ export function UncontrolledForm({ onSuccess }: Props) {
         </div>
       </div>
 
-      {/* country (пока select из стора; позже заменим на autocomplete) */}
       <div className={s.row}>
         <label className={s.label} htmlFor="country">
           Country
         </label>
-        <select
-          className={s.select}
+        <input
           id="country"
+          className={s.input}
           name="country"
-          defaultValue=""
-        >
-          <option value="" disabled>
-            Select country…
-          </option>
+          list="countries-list"
+          placeholder="Start typing a country…"
+        />
+        <datalist id="countries-list">
           {countries.map((c) => (
-            <option key={c} value={c}>
-              {c}
-            </option>
+            <option key={c} value={c} />
           ))}
-        </select>
+        </datalist>
         <div className={s.error} aria-live="polite">
           {errors.country}
         </div>

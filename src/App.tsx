@@ -13,6 +13,8 @@ function App() {
 
   return (
     <>
+      <h1>Form app</h1>
+
       <div style={{ display: 'flex', gap: 12, marginBottom: 16 }}>
         <button onClick={() => setMode('uncontrolled')}>
           Open Uncontrolled Form
