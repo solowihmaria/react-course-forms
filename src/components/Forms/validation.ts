@@ -1,36 +1,38 @@
 import * as Yup from 'yup';
 import type { UserFormData, Gender } from './types';
 
+// Keep both Latin & Cyrillic uppercase for first letter
 export const nameFirstUpper = /^[A-ZА-Я][A-Za-zА-Яа-я' -]*$/;
 export const passwordStrengthRe =
   /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^A-Za-z0-9]).+$/;
 
 export const formSchema: Yup.ObjectSchema<UserFormData> = Yup.object({
   name: Yup.string()
-    .matches(nameFirstUpper, 'Первая буква должна быть заглавной')
-    .required('Введите имя'),
+    .matches(nameFirstUpper, 'First letter must be uppercase')
+    .required('Enter your name'),
   age: Yup.number()
-    .typeError('Возраст должен быть числом')
-    .integer('Возраст должен быть целым')
-    .min(0, 'Возраст не может быть отрицательным')
-    .required('Введите возраст'),
-  email: Yup.string().email('Некорректный email').required('Введите email'),
+    .typeError('Age must be a number')
+    .integer('Age must be an integer')
+    .min(0, 'Age cannot be negative')
+    .required('Enter your age'),
+  email: Yup.string().email('Invalid email').required('Enter your email'),
   password: Yup.string()
     .matches(
       passwordStrengthRe,
-      'Пароль слабый: нужны цифра, заглавная, строчная и спецсимвол'
+      'Weak password: require at least one digit, uppercase, lowercase, and special character'
     )
-    .min(8, 'Минимум 8 символов')
-    .required('Введите пароль'),
+    .min(8, 'At least 8 characters')
+    .required('Enter your password'),
   confirmPassword: Yup.string()
-    .oneOf([Yup.ref('password')], 'Пароли не совпадают')
-    .required('Повторите пароль'),
+    .oneOf([Yup.ref('password')], 'Passwords do not match')
+    .required('Confirm your password'),
   gender: Yup.mixed<Gender>()
-    .oneOf(['male', 'female', 'other'], 'Выберите пол')
-    .required('Выберите пол'),
+    .oneOf(['male', 'female', 'other'], 'Select gender')
+    .required('Select gender'),
   acceptTC: Yup.boolean()
-    .oneOf([true], 'Необходимо согласие с условиями')
+    .oneOf([true], 'You must accept the Terms & Conditions')
     .defined(),
-  country: Yup.string().required('Выберите страну'),
+  country: Yup.string().required('Select a country'),
+
   pictureBase64: Yup.string().nullable().defined(),
 }).required();

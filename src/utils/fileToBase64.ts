@@ -2,10 +2,10 @@ const ALLOWED = ['image/png', 'image/jpeg'];
 
 export async function fileToBase64(file: File, maxBytes = 2 * 1024 * 1024) {
   if (!ALLOWED.includes(file.type)) {
-    throw new Error('Допустимы только PNG или JPEG');
+    throw new Error('Only PNG or JPEG are allowed');
   }
   if (file.size > maxBytes) {
-    throw new Error('Файл слишком большой (макс. 2MB)');
+    throw new Error('File is too large (max 2MB)');
   }
   const base64 = await new Promise<string>((resolve, reject) => {
     const reader = new FileReader();
