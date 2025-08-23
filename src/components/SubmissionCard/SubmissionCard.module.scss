@@ -1,0 +1,83 @@
+.card {
+  border: 1px solid var(--disabled-border);
+  background: var(--color-bg);
+  color: var(--text-main);
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  transition:
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease;
+  display: grid;
+  gap: 10px;
+}
+
+.new {
+  border-color: var(--color-primary-border);
+  box-shadow: 0 0 0 6px var(--color-primary-shadow);
+  background: var(--color-primary-lighter);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.badge {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  border: 1px solid var(--disabled-border);
+  background: var(--disabled-bg);
+  color: var(--text-muted);
+}
+
+.badgeRHF {
+  background: #e9f7ff;
+  border-color: #b3e1f9;
+}
+
+.badgeUnc {
+  background: #f5f6ff;
+  border-color: #cfd3ff;
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--disabled-border);
+  background: var(--disabled-bg);
+}
+
+.info {
+  margin: 0;
+  display: grid;
+  gap: 6px;
+  font-size: 14px;
+
+  dt {
+    font-weight: 600;
+    display: inline;
+  }
+  dd {
+    display: inline;
+    margin: 0 0 0 6px;
+  }
+}
