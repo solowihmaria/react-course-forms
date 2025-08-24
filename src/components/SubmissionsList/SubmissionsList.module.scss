@@ -1,0 +1,33 @@
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+}
+
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.empty {
+  border: 1px dashed var(--disabled-border);
+  background: var(--color-primary-lighter);
+  border-radius: 14px;
+  padding: 20px;
+  display: grid;
+  place-items: center;
+  color: var(--text-muted);
+}
+
+.emptyText {
+  margin: 0;
+  font-size: 14px;
+}

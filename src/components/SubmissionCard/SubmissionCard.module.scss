@@ -1,0 +1,95 @@
+.card {
+  border: 1px solid var(--disabled-border);
+  background: var(--surface);
+  color: var(--text-main);
+  border-radius: 14px;
+  padding: 12px;
+  box-shadow: var(--elev-1);
+  transition:
+    transform 0.08s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+  display: grid;
+  gap: 10px;
+
+  &:hover {
+    transform: translateY(-1px);
+    border-color: var(--color-primary-border);
+    box-shadow: var(--elev-2);
+    background: var(--surface-hover);
+  }
+}
+
+.new {
+  border-color: var(--color-primary-border);
+  box-shadow: 0 0 0 6px var(--ring-primary);
+  background: var(--color-primary-lighter);
+}
+
+.header {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.badge {
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 10px;
+  border: 1px solid var(--disabled-border);
+  background: var(--disabled-bg);
+  color: var(--text-main);
+}
+
+.badgeRHF {
+  background: var(--badge-rhf-bg);
+  border-color: var(--badge-rhf-border);
+}
+
+.badgeUnc {
+  background: var(--badge-unc-bg);
+  border-color: var(--badge-unc-border);
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid var(--disabled-border);
+  background: var(--disabled-bg);
+}
+
+.info {
+  margin: 0;
+  display: grid;
+  gap: 6px;
+  font-size: 11px;
+
+  dt {
+    font-weight: 600;
+    display: inline;
+    color: var(--text-main);
+  }
+  dd {
+    display: inline;
+    margin: 0 0 0 6px;
+    color: var(--text-muted);
+  }
+}
