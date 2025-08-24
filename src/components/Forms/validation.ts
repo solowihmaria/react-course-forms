@@ -1,7 +1,6 @@
 import * as Yup from 'yup';
 import type { UserFormData, Gender } from './types';
 
-// Keep both Latin & Cyrillic uppercase for first letter
 export const nameFirstUpper = /^[A-ZА-Я][A-Za-zА-Яа-я' -]*$/;
 export const passwordStrengthRe =
   /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^A-Za-z0-9]).+$/;

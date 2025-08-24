@@ -17,10 +17,7 @@ function App() {
       <h1 className={s.title}>Form app</h1>
 
       <div className={s.toolbar}>
-        <button
-          className={s.btnSecondary}
-          onClick={() => setMode('uncontrolled')}
-        >
+        <button className={s.btn} onClick={() => setMode('uncontrolled')}>
           Open Uncontrolled Form
         </button>
         <button className={s.btn} onClick={() => setMode('rhf')}>

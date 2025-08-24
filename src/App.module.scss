@@ -25,8 +25,7 @@
   margin-bottom: 8px;
 }
 
-.btn,
-.btnSecondary {
+.btn {
   height: 40px;
   padding: 0 16px;
   border-radius: 10px;
@@ -43,8 +42,7 @@
   will-change: transform;
 }
 
-.btn:hover,
-.btnSecondary:hover {
+.btn:hover {
   transform: translateY(-1px);
   background: var(--color-primary);
 }
